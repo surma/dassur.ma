@@ -1,1 +1,9 @@
-{{.Params.repository}}
+{{ partial "header.html" . }}
+  <script src="{{.Site.BaseURL}}/nobabel/requirejs/require.js" data-main="{{.Site.BaseURL}}/scripts/thing.js" defer></script>
+</head>
+<body>
+  {{ $commits := getJSON "https://api.github.com/repos/" .Params.repository "/commits" }}
+  <script>
+    window._commits = {{ $commits }};
+  </script>
+{{ partial "footer.html" . }}

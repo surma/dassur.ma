@@ -11,14 +11,13 @@
 
     <!-- lazy-loaded styles -->
     <noscript class="lazyload">
-      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="{{.Site.BaseURL}}/styles/main.css">
     </noscript>
 
     <!-- module loader -->
     <script>
     var require = {
-      baseUrl: './',
+      baseUrl: '{{.Site.BaseURL}}/',
       waitSeconds: 0
     };
     </script>
-    <script src="nobabel/requirejs/require.js" data-main="main.js" defer></script>
